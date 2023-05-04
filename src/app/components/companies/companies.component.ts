@@ -10,6 +10,7 @@ import {CompanyService} from "../../services/company.service";
 })
 export class CompaniesComponent implements OnInit {
   companies: Company[] = [];
+  search: string = '';
 
   constructor(private router: Router, private companyService: CompanyService) {
   }
@@ -19,7 +20,11 @@ export class CompaniesComponent implements OnInit {
       this.companies = result;
     })
   }
-  pretraga(){
-    
+
+  pretraga() {
+    this.companyService.getAllSearch(this.search).subscribe(result => {
+      this.companies = result;
+    })
+
   }
 }

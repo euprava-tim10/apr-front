@@ -13,6 +13,7 @@ import {IsAdmin} from "./auth/guards/IsAdmin";
 import { CompaniesComponent } from './components/companies/companies.component';
 import {UserService} from "./services/user.service";
 import {CompanyService} from "./services/company.service";
+import {FormsModule} from "@angular/forms";
 
 
 @NgModule({
@@ -26,6 +27,7 @@ import {CompanyService} from "./services/company.service";
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
+    FormsModule,
   ],
   providers: [    {
     provide: HTTP_INTERCEPTORS,

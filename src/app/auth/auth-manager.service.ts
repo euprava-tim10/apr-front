@@ -12,7 +12,7 @@ export class AuthManagerService {
 
   loginUserAndRedirect(token: string) {
     localStorage.setItem('token', token);
-    this.router.navigateByUrl('/');
+    this.router.navigateByUrl('/companies');
   }
 
   logoutUserAndRedirect() {

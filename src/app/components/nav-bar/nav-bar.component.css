@@ -1,7 +1,8 @@
 #div{
-  display: inline-block;
+  display: contents;
 }
 .button{
   margin: 10px;
   background: #6a11cb;
 }
+
