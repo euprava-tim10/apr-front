@@ -1,0 +1,13 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" id="apr" href="#">APR</a>
+    <div class="collapse navbar-collapse" id = "div">
+    </div>
+    <button type="button" class="btn" (click)="openCompaniesPage()" >Pretraga</button>
+    <button *ngIf=isLoggedIn type="button" class="btn btn-outline-dark px-5" >Registruj firmu</button>
+    <a *ngIf="!isLoggedIn"
+            type="button"
+            href="http://localhost:9090/authorize?redirect_uri=localhost%3A4200%2Fredirect&service=apr">Prijavi se
+    </a>
+
+    <button type="button" class="btn btn-outline-dark px-5" *ngIf=isLoggedIn (click)="logout()">Odjavi se</button>
+</nav>

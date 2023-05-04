@@ -1,0 +1,33 @@
+<div class="input-group">
+  <div class="form-outline">
+    <input type="search" id="form1" class="form-control" />
+  </div>
+  <button type="button" (click)="pretraga()" class="btn btn-primary">
+    <i class="fas fa-search"></i> Pretrazi
+  </button>
+</div>
+
+<table class="table table-striped">
+  <thead>
+  <tr>
+    <th scope="col">Ime</th>
+    <th scope="col">PIO</th>
+    <th scope="col">PIB</th>
+    <th scope="col">Datum registracije</th>
+    <th scope="col">Registracioni broj</th>
+    <th scope="col">Status</th>
+  </tr>
+  </thead>
+  <tbody>
+
+  <tr *ngFor="let c of companies">
+
+    <td>{{c.name}}</td>
+    <td>{{c.pio}}</td>
+    <td>{{c.pib}}</td>
+    <td>{{c.registrationDate}}</td>
+    <td>{{c.registrationNumber}}</td>
+    <td>{{c.status}}</td>
+  </tr>
+  </tbody>
+</table>
