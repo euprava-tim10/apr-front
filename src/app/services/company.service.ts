@@ -9,7 +9,8 @@ import {Company} from "../model/company";
 })
 export class CompanyService {
 
-  private readonly path: string = "api/companies";
+  private readonly server: string = "http://localhost:8004";
+  private readonly path: string = this.server + "/api/companies";
 
   constructor(private http: HttpClient) {
   }

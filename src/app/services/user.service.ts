@@ -11,7 +11,8 @@ import {User} from "../model/user";
 export class UserService {
 
 
-  private readonly path: string = "api/users/registration";
+  private readonly server: string = "http://localhost:8004";
+  private readonly path: string = this.server + "/api/users/registration";
   private readonly pathUpdateUser: string = "api/users/";
 
   constructor(private http: HttpClient) {
