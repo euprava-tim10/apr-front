@@ -11,6 +11,7 @@ export class CompanyService {
 
   private readonly server: string = "http://localhost:8004";
   private readonly path: string = this.server + "/api/companies";
+  private readonly registerPath: string = this.server + "/api/companies/register";
 
   constructor(private http: HttpClient) {
   }
@@ -23,4 +24,9 @@ export class CompanyService {
   getAllSearch(search: string): Observable<Company[]> {
     return this.http.get <Company[]>(this.path + "?search=" + search);
   }
+
+  registerCompany(name: string, pio: string, pib: string): Observable<any> {
+    return this.http.post<any>(this.registerPath,  {name: name, pio: pio, pib: pib});
+  }
+
 }

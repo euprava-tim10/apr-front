@@ -4,6 +4,7 @@ export class User{
   firstName: string;
   lastName: string;
   role: string;
+  companyId: number;
 
 
 
@@ -13,6 +14,7 @@ export class User{
     this.firstName = obj && obj.firstName || null;
     this.lastName = obj && obj.lastName || null;
     this.role = obj && obj.role || null;
+    this.companyId = obj && obj.companyId || null;
 
   }
 }
