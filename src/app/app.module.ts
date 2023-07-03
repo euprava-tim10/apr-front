@@ -14,6 +14,7 @@ import { CompaniesComponent } from './components/companies/companies.component';
 import {UserService} from "./services/user.service";
 import {CompanyService} from "./services/company.service";
 import {FormsModule} from "@angular/forms";
+ import { RegisterCompanyComponent } from './register-company/register-company.component';
 
 
 @NgModule({
@@ -21,7 +22,8 @@ import {FormsModule} from "@angular/forms";
     AppComponent,
     NavBarComponent,
     RedirectComponent,
-    CompaniesComponent
+    CompaniesComponent,
+    RegisterCompanyComponent
   ],
   imports: [
     BrowserModule,
