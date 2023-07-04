@@ -1,0 +1,48 @@
+<form (ngSubmit)="create()" class="vh-100 gradient-custom" #createJobAdvertisement="ngForm" >
+  <div class="container py-5 h-100">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="col-12 col-md-8 col-lg-6 col-xl-5">
+        <div class="card  text-dark" id="signUpForm" style="border-radius: 1rem;">
+          <div class="card-body p-5 text-center">
+
+            <div class="mb-md-5 mt-md-4 pb-5">
+
+              <h3 class="fw-bold mb-2 text-uppercase">Kreiranje konkursa</h3>
+
+              <div class="form-outline form-white mb-4">
+                <label class="form-label" for="endDate">Zavrsetak konkursa </label>
+                <input required type="date" [(ngModel)]="endDate" id="endDate" name="endDate"
+                       class="form-control form-control-lg"/>
+
+              </div>
+              <div>
+                <label class="form-label" for="profession">Potrebna profesija </label>
+                <select id="profession" name="profession" required class="form-select display-inline" [(ngModel)]="profession">
+                  <option *ngFor="let profession of professions" value="{{profession}}">{{profession}}</option>
+                </select>
+
+              </div>
+              <div>
+                <label class="form-label" for="education">Nivo obrazovanja </label>
+                <select required id="education" name="education" class="form-select display-inline"  [(ngModel)]="education">
+                  <option *ngFor="let education of educations" value="{{education}}">{{education}}</option>
+                </select>
+
+              </div>
+
+            </div>
+            <div>
+              <button [disabled]="createJobAdvertisement.form.invalid" class="btn btn-outline-primary px-5"
+                      type="submit">Potvrdi
+              </button>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</form>
+
+
+

@@ -1,0 +1,25 @@
+<div class="card">
+  <div class="card-body">
+    <div>
+      <a *ngIf="isLoggedIn" id="dodajKonkurs" class="card-link" [routerLink]="['/createJobAdvertisement']">Dodaj konkurs</a>
+      <a *ngIf="isLoggedIn" id="prikaziKonkurs" class="card-link" [routerLink]="['/jobAdvertisements']">Prikazi konkurse</a>
+
+    </div>
+    <h5 class="card-title">{{company.name}}</h5>
+    <div>
+      <p>PIB: {{company.PIB}}</p>
+      <p>PIO: {{company.PIO}}</p>
+      <p>Registration date: {{company.registrationDate}}</p>
+      <p>Registration number: {{company.registrationNumber}}</p>
+      <p>Status: {{company.status}}</p>
+    </div>
+    <p>Zaposleni<br></p>
+    <div *ngFor="let user of company.employee">
+      <p>Ime: {{user.firstName}} </p>
+      <p>Prezime: {{user.lastName}} </p>
+      <p>Profesija: {{user.profession}} </p>
+      <p>Nivo obrazovanja: {{user.education}} </p>
+    </div>
+  </div>
+
+</div>

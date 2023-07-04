@@ -1,0 +1,29 @@
+<table class="table table-striped">
+  <thead>
+  <tr>
+    <th scope="col">Ime</th>
+    <th scope="col">Prezime</th>
+    <th scope="col">Profesija</th>
+    <th scope="col">Nivo obrazovanja</th>
+    <th scope="col">Status</th>
+    <th scope="col"></th>
+  </tr>
+  </thead>
+  <tbody>
+
+  <tr *ngFor="let application of applications">
+
+    <td>{{application.user.firstName}}</td>
+    <td>{{application.user.lastName}}</td>
+    <td>{{application.user.profession}}</td>
+    <td>{{application.user.education}}</td>
+    <td>{{application.status}}</td>
+    <td *ngIf="application.status == 'PENDING'">
+      <button  class="btn btn-primary" (click)="acceptApplication(application.user.id)">Prihvati</button>
+      <button  class="btn btn-primary" (click)="rejectApplication(application.user.id)">Odbij</button>
+    </td>
+
+
+  </tr>
+  </tbody>
+</table>

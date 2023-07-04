@@ -1,0 +1,25 @@
+<table class="table table-striped">
+  <thead>
+  <tr>
+    <th scope="col">Pocetak konkursa</th>
+    <th scope="col">Kraj konkursa</th>
+    <th scope="col">Potreban nivo obrazovanja</th>
+    <th scope="col">Potrebna profesija</th>
+    <th scope="col"></th>
+  </tr>
+  </thead>
+  <tbody>
+
+  <tr *ngFor="let jobAdvertisement of jobAdvertisements">
+
+    <td>{{jobAdvertisement.endDate}}</td>
+    <td>{{jobAdvertisement.startDate}}</td>
+    <td>{{jobAdvertisement.neededEducation}}</td>
+    <td>{{jobAdvertisement.profession}}</td>
+    <td>
+      <button type="button" (click)="showApplication(jobAdvertisement.id)" class="btn btn-primary">Prikazi aplikacije</button>
+    </td>
+
+  </tr>
+  </tbody>
+</table>

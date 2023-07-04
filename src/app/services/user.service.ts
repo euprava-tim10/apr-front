@@ -13,18 +13,18 @@ export class UserService {
 
   private readonly server: string = "http://localhost:8004";
   private readonly path: string = this.server + "/api/users/registration";
-  private readonly pathUpdateUser: string = "api/users/";
+  private readonly pathUpdateUser: string = this.server +  "/api/users";
 
   constructor(private http: HttpClient) {
   }
 
-  signUp(jmbg: string, username: string, password: string): Observable<any> {
-    return this.http.post<any>(this.path, {jmbg: jmbg, username: username, password: password});
+  signUp(username: string, password: string): Observable<any> {
+    return this.http.post<any>(this.path, {username: username, password: password});
   }
 
 
   getMyInfo(): Observable<User> {
-    return this.http.get<User>("api/users")
+    return this.http.get<User>(this.pathUpdateUser);
 
   }
 

@@ -14,7 +14,12 @@ import { CompaniesComponent } from './components/companies/companies.component';
 import {UserService} from "./services/user.service";
 import {CompanyService} from "./services/company.service";
 import {FormsModule} from "@angular/forms";
- import { RegisterCompanyComponent } from './register-company/register-company.component';
+ import { RegisterCompanyComponent } from './components/register-company/register-company.component';
+import { MyComapanyComponent } from './components/my-comapany/my-comapany.component';
+import { CreateJobAdvertisementsComponent } from './components/create-job-advertisements/create-job-advertisements.component';
+import {JobAdvertisementService} from "./services/job.advertisement.service";
+import { ShowJobAdvertisementsComponent } from './components/show-job-advertisements/show-job-advertisements.component';
+import { ShowApplicationsComponent } from './components/show-applications/show-applications.component';
 
 
 @NgModule({
@@ -23,7 +28,11 @@ import {FormsModule} from "@angular/forms";
     NavBarComponent,
     RedirectComponent,
     CompaniesComponent,
-    RegisterCompanyComponent
+    RegisterCompanyComponent,
+    MyComapanyComponent,
+    CreateJobAdvertisementsComponent,
+    ShowJobAdvertisementsComponent,
+    ShowApplicationsComponent
   ],
   imports: [
     BrowserModule,
@@ -40,7 +49,8 @@ import {FormsModule} from "@angular/forms";
     IsLoggedIn,
     IsAdmin,
     UserService,
-    CompanyService
+    CompanyService,
+    JobAdvertisementService
   ],
   bootstrap: [AppComponent]
 })

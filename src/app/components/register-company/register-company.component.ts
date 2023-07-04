@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {Router} from "@angular/router";
-import {CompanyService} from "../services/company.service";
+import {CompanyService} from "../../services/company.service";
 
 @Component({
   selector: 'app-register-company',
