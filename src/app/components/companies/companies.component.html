@@ -1,13 +1,27 @@
+<div>
+  <a *ngIf="isLoggedIn && !isOwnerCompany" id="registracijaFirme" [routerLink]="['/register-company']">Registruj firmu<br/></a>
+  <a *ngIf="isLoggedIn && isOwnerCompany" id="prikazFirme" [routerLink]="['/userCompany']">Prikazi firmu<br/></a>
+  <a *ngIf="isAdmin" id="prikazZahteva" [routerLink]="['/requestsChangeStatus']">Prikazi zahteve za promenu statusa<br/></a>
+  <br/>
+</div>
 <div class="input-group container-fluid">
+
   <div>
-    <a *ngIf="isLoggedIn && !isOwnerCompany" id="registracijaFirme" [routerLink]="['/register-company']">Registruj firmu<br></a>
-    <a *ngIf="isLoggedIn && isOwnerCompany" id="prikazFirme" [routerLink]="['/userCompany']">Prikazi firmu<br></a>
+    <div><label for="name">Name </label>
+      <input [(ngModel)]="name" type="checkbox" id="name" name="name" checked></div>
+    <div>
+      <label for="registartionNumber">Registration number </label>
+      <input [(ngModel)]="registartionNumber" type="checkbox" id="registartionNumber" name="registartionNumber">
+    </div>
+
   </div>
-  <div class="form-outline">
+  <div id = "pretragaDiv" class="form-outline">
+
     <input type="search" [(ngModel)]="search" id="form1" class="form-control"/>
   </div>
-  <button type="button" (click)="pretraga()" class="btn btn-primary">
-    <i class="fas fa-search"></i> Pretrazi
+  <button type="button" (click)="pretraga()" class="btn btn-primary">Pretrazi
+  </button>
+  <button type="button" (click)="ponisti()" class="btn btn-primary">Ponisti
   </button>
 </div>
 

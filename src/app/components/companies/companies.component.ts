@@ -18,6 +18,8 @@ export class CompaniesComponent implements OnInit {
   currentUser: User = new User();
   isLoggedIn = false;
   isAdmin = false;
+  name: boolean = true;
+  registartionNumber: boolean = false;
 
   constructor(private router: Router, private companyService: CompanyService, private userService: UserService, private authManagerService: AuthManagerService) {
   }
@@ -26,6 +28,7 @@ export class CompaniesComponent implements OnInit {
     this.companyService.getAll().subscribe(result => {
       this.companies = result;
       this.isLoggedIn = this.authManagerService.isLoggedIn();
+      this.isAdmin = this.authManagerService.isAdmin();
       console.log(this.isLoggedIn)
       this.userService.getMyInfo().subscribe((currentUser => {
         console.log("User")
@@ -39,7 +42,23 @@ export class CompaniesComponent implements OnInit {
   }
 
   pretraga() {
-    this.companyService.getAllSearch(this.search).subscribe(result => {
+    let criteria = []
+    if (this.name) {
+      criteria.push("name")
+    }
+    if (this.registartionNumber) {
+      criteria.push("registartionNumber")
+    }
+    let criteriaStr = criteria.join(',');
+
+    this.companyService.getAllSearch(this.search, criteriaStr).subscribe(result => {
+      this.companies = result;
+    })
+
+  }
+
+  ponisti() {
+    this.companyService.getAll().subscribe(result => {
       this.companies = result;
     })
 

@@ -1,0 +1,30 @@
+<div *ngIf="isAdmin">
+<table  class="table table-striped">
+  <thead>
+  <tr>
+    <th scope="col">Firma id</th>
+    <th scope="col">Razlog</th>
+    <th scope="col">Novi status</th>
+    <th scope="col">Satus zahteva</th>
+    <th scope="col"></th>
+  </tr>
+  </thead>
+  <tbody>
+
+  <tr *ngFor="let requestChangeStatus of requestChangeStatuses">
+
+    <td>{{requestChangeStatus.companyId}}</td>
+    <td>{{requestChangeStatus.reason}}</td>
+    <td>{{requestChangeStatus.companyStatus}}</td>
+    <td>{{requestChangeStatus.requestStatus}}</td>
+
+    <td *ngIf="requestChangeStatus.requestStatus == 'PENDING'">
+      <button  class="btn btn-primary" (click)="acceptChangeStatus(requestChangeStatus.id)">Prihvati</button>
+      <button  class="btn btn-primary" (click)="rejectChangeStatus(requestChangeStatus.id)">Odbij</button>
+    </td>
+
+
+  </tr>
+  </tbody>
+</table>
+</div>

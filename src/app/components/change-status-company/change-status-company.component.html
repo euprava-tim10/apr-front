@@ -1,0 +1,61 @@
+<form (ngSubmit)="requestChangeStatus()" class="vh-100 gradient-custom" #request="ngForm">
+  <div class="container py-5 h-100">
+    <ng-container [ngSwitch]="company.status">
+      <h3>Zahtev za promenu statusa</h3>
+      <div *ngSwitchCase="'ACTIVE'" class="card w-50 mx-auto mb-2">
+        <div>
+          <label class="form-label" for="statusActive">Izaberite status</label>
+          <select id="statusActive" name="statusActive" required class="form-select display-inline"
+                  [(ngModel)]="status">
+            <option *ngFor="let status of statusesNoActive" value="{{status}}">{{status}}</option>
+          </select>
+
+        </div>
+      </div>
+      <div *ngSwitchCase="'DELETED'" class="card w-50 mx-auto mb-2">
+        <div>
+          <label class="form-label" for="statusDeleted">Izaberite status</label>
+          <select id="statusDeleted" name="statusDeleted" required class="form-select display-inline"
+                  [(ngModel)]="status">
+            <option *ngFor="let status of statusesNoDeleted" value="{{status}}">{{status}}</option>
+          </select>
+
+        </div>
+      </div>
+      <div *ngSwitchCase="'FROZEN'" class="card w-50 mx-auto mb-2">
+        <div>
+          <label class="form-label" for="statusFrozen">Izaberite status</label>
+          <select id="statusFrozen" name="statusFrozen" required class="form-select display-inline"
+                  [(ngModel)]="status">
+            <option *ngFor="let status of statusesNoFrozen" value="{{status}}">{{status}}</option>
+          </select>
+
+        </div>
+
+      </div>
+      <div *ngSwitchCase="'BANKRUPTCY'" class="card w-50 mx-auto mb-2">
+        <div>
+          <label class="form-label" for="statusBankruptcy">Izaberite status</label>
+          <select id="statusBankruptcy" name="statusBankruptcy" required class="form-select display-inline"
+                  [(ngModel)]="status">
+            <option *ngFor="let status of statusesNoBankruptcy" value="{{status}}">{{status}}</option>
+          </select>
+
+        </div>
+
+      </div>
+    </ng-container>
+    <div>
+      <label class="form-label" id="lblRazlog" for="razlog">Razlog: </label>
+      <textarea  required id="razlog" [(ngModel)]="reason"></textarea>
+    </div>
+
+    <div>
+      <button [disabled]="request.form.invalid" class="btn btn-outline-primary px-5"
+              type="submit">Potvrdi
+      </button>
+
+    </div>
+  </div>
+
+</form>

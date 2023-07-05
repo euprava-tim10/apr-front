@@ -1,6 +1,7 @@
 import {User} from "./user";
 
 export class Company{
+  id: number;
   name: string;
   PIO: string;
   PIB: string;
@@ -12,6 +13,7 @@ export class Company{
 
 
   constructor(obj?: any){
+    this.id = obj && obj.id || null;
     this.name = obj && obj.name || null;
     this.PIO = obj && obj.PIO || null;
     this.PIB = obj && obj.PIB || null;

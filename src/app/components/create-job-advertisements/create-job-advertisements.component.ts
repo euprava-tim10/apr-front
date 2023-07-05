@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {Router} from "@angular/router";
 import {JobAdvertisementService} from "../../services/job.advertisement.service";
 
@@ -21,7 +21,7 @@ export class CreateJobAdvertisementsComponent implements OnInit {
   create() {
     this.jobAdvertisementService.createJobAdvertisement(this.endDate, this.education, this.profession)
       .subscribe(result => {
-          alert("Uspesno ste dodali job");
+          alert("Uspesno ste dodali konkurs");
           this.router.navigateByUrl('userCompany');
         }
       )

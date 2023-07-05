@@ -1,8 +1,9 @@
 <div class="card">
   <div class="card-body">
     <div>
-      <a *ngIf="isLoggedIn" id="dodajKonkurs" class="card-link" [routerLink]="['/createJobAdvertisement']">Dodaj konkurs</a>
-      <a *ngIf="isLoggedIn" id="prikaziKonkurs" class="card-link" [routerLink]="['/jobAdvertisements']">Prikazi konkurse</a>
+      <a *ngIf="isLoggedIn && isOwnerCompany" id="dodajKonkurs" class="card-link" [routerLink]="['/createJobAdvertisement']">Dodaj konkurs</a>
+      <a *ngIf="isLoggedIn && isOwnerCompany" id="prikaziKonkurs" class="card-link" [routerLink]="['/jobAdvertisements']">Prikazi konkurse</a>
+      <a *ngIf="isLoggedIn && isOwnerCompany" id="promenaStatusa" class="card-link" [routerLink]="['/showChangeStatus']" >Zahtev za promenu statusa<br/></a>
 
     </div>
     <h5 class="card-title">{{company.name}}</h5>
