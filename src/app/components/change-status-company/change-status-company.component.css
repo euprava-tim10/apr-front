@@ -1,3 +1,15 @@
-.lblRazlog{
-  display: inline-flex;
+.lblRazlog {
+  display: block;
+}
+
+.kreirajBtn {
+  margin-left: 175px;
+}
+
+.razlogDiv {
+  margin-left: 175px;
+}
+
+.naslov {
+  margin-left: 200px;
 }

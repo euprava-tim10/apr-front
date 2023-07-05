@@ -10,19 +10,32 @@ import {JobAdvertisementService} from "../../services/job.advertisement.service"
 export class CreateJobAdvertisementsComponent implements OnInit {
   professions = ["ADMINISTRATION", "ECONOMICS_FINANCE_AND_INSURANCE", "ELECTRICAL_ENGINEERING_AND_TELECOMMUNICATIONS", "MEDICINE", "ARCHITECTURE_CONSTRUCTION_AND_GEODESY", "OTHER"];
   educations = ["NO_EDUCATION_REQUIRED", "PRIMARY_SCHOOL_DEGREE", "SECONDARY_SCHOOL_DEGREE", "FACULTY_DEGREE"];
-  endDate: Date= new Date();
-  constructor(private router: Router,private jobAdvertisementService: JobAdvertisementService) { }
+  endDate: Date = new Date();
+
+  constructor(private router: Router, private jobAdvertisementService: JobAdvertisementService) {
+  }
+
   profession: string = ""
-  education: string= ""
+  education: string = ""
 
   ngOnInit(): void {
 
   }
+
   create() {
     this.jobAdvertisementService.createJobAdvertisement(this.endDate, this.education, this.profession)
       .subscribe(result => {
+        if (!result) {
+          alert("Firma nije aktivna ne mozete kreirati konkurs");
+          this.router.navigateByUrl('userCompany');
+        }else{
           alert("Uspesno ste dodali konkurs");
           this.router.navigateByUrl('userCompany');
+        }
+
+
+
+
         }
       )
 

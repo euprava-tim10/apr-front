@@ -18,7 +18,7 @@ export class JobAdvertisementService {
   }
 
   createJobAdvertisement(endDate: Date, education: string, profession: string): Observable<any> {
-    return this.http.post<any>(this.createPath, {endDate: endDate,neededEducation: education, profession: profession});
+    return this.http.post<boolean>(this.createPath, {endDate: endDate,neededEducation: education, profession: profession});
   }
 
   getAllJobAdvertisementsCompany(): Observable<Job_advertisement[]> {

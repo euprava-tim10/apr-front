@@ -1,7 +1,7 @@
 <form (ngSubmit)="requestChangeStatus()" class="vh-100 gradient-custom" #request="ngForm">
   <div class="container py-5 h-100">
     <ng-container [ngSwitch]="company.status">
-      <h3>Zahtev za promenu statusa</h3>
+      <h3 class="naslov">Zahtev za promenu statusa</h3>
       <div *ngSwitchCase="'ACTIVE'" class="card w-50 mx-auto mb-2">
         <div>
           <label class="form-label" for="statusActive">Izaberite status</label>
@@ -45,14 +45,14 @@
 
       </div>
     </ng-container>
-    <div>
-      <label class="form-label" id="lblRazlog" for="razlog">Razlog: </label>
-      <textarea  required id="razlog" [(ngModel)]="reason"></textarea>
+    <div class="razlogDiv">
+      <label class="form-label lblRazlog" for="razlog">Razlog: </label>
+      <textarea id="razlog"  required  [(ngModel)]="reason"></textarea>
     </div>
 
     <div>
-      <button [disabled]="request.form.invalid" class="btn btn-outline-primary px-5"
-              type="submit">Potvrdi
+      <button   [disabled]="request.form.invalid" class="btn btn-outline-primary px-5 kreirajBtn"
+              type="submit">Kreiraj
       </button>
 
     </div>
